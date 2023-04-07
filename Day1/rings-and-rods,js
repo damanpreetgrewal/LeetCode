@@ -1,0 +1,29 @@
+/**
+ * @param {string} rings
+ * @return {number}
+ */
+var countPoints = function (rings) {
+  let obj = {};
+  let count = 0;
+  for (let i = 0; i < rings.length; i++) {
+    if (i % 2 !== 0) {
+      if (obj[rings[i]]) {
+        obj[rings[i]] += rings[i - 1];
+      } else {
+        obj[rings[i]] = rings[i - 1];
+      }
+    }
+  }
+  console.log(obj);
+  for (const item in obj) {
+    if (
+      obj[item].includes('B') &&
+      obj[item].includes('G') &&
+      obj[item].includes('R')
+    )
+      count++;
+  }
+  return count;
+};
+
+console.log(countPoints('B0B6G0R6R0R6G9'));
