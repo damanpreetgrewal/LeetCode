@@ -3,7 +3,7 @@
  * @return {number}
  */
 var mySqrt = function (x) {
-  let mySqrt = 1;
+  let sqrt = 1;
   if (x === 0) {
     return 0;
   }
@@ -18,4 +18,4 @@ var mySqrt = function (x) {
   return sqrt;
 };
 
-console.log(mySqrt(64));
+console.log(mySqrt(65));

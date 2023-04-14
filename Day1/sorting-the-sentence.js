@@ -22,6 +22,7 @@
 //         output.splice(3, 0, wordsArr[i].substring(0, wordsArr[i].length - 1));
 //         break;
 //     }
+
 //     console.log("output", output);
 //   }
 //   console.log(output.join(" "));

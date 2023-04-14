@@ -1,4 +1,4 @@
-const failingGrades = (arr) => {
+const failingGrades = arr => {
   let arr1 = []; //passing array
   let arr2 = []; //failing array
 

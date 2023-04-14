@@ -1,4 +1,4 @@
-const makeArrayConsecutive = (arr) => {
+const makeArrayConsecutive = arr => {
   arr.sort((a, b) => a - b);
   console.log(arr);
   let output = [];

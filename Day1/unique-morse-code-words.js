@@ -43,7 +43,7 @@ var uniqueMorseRepresentations = function (words) {
           previousValue + mosreCode[currentValue],
         ''
       );
-    console.log(temp);
+    console.log('temp', temp);
 
     if (resArray.indexOf(temp) === -1) {
       resArray.push(temp);
@@ -53,4 +53,4 @@ var uniqueMorseRepresentations = function (words) {
   return count;
 };
 
-console.log(uniqueMorseRepresentations(['gin']));
+console.log(uniqueMorseRepresentations(['gin', 'abc']));

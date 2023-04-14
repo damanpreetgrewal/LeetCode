@@ -15,4 +15,4 @@ const bracketValidator = (s) => {
   return stack.length ? false : true;
 };
 
-console.log(bracketValidator("{[()]}"));
+console.log(bracketValidator("{[())]}"));

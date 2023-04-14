@@ -12,6 +12,7 @@ var longestCommonPrefix = function (strs) {
 
   /* sort the array of strings */
   strs.sort();
+  console.log(strs);
 
   /* find the minimum length from first and last string */
   let end = Math.min(strs[0].length, strs[size - 1].length);
