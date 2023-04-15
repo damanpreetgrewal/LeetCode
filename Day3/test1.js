@@ -1,20 +1,15 @@
-const bracketValidator = s => {
-  let stack = [];
-
-  for (let char of s) {
-    if (char === '{' || char === '(' || char === '[') {
-      stack.push(char);
-      console.log(stack);
-    } else if (
-      (char === '}' && stack[stack.length - 1] === '{') ||
-      (char === ')' && stack[stack.length - 1] === '(') ||
-      (char === ']' && stack[stack.length - 1] === '[')
-    ) {
-      stack.pop();
-    } else return false;
+const sumOddLengthSubarrays = arr => {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j <= arr.length; j++) {
+      let subArr = arr.slice(i, j);
+      if (subArr.length % 2 !== 0) {
+        let sum = subArr.reduce((s, el, i) => s + el, 0);
+        total += sum;
+      }
+    }
   }
-
-  return stack.length ? false : true;
+  return total;
 };
 
-console.log(bracketValidator('{[()]}'));
+console.log(sumOddLengthSubarrays([1, 4, 2, 5, 3]));
