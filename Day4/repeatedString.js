@@ -1,15 +1,17 @@
 const repeatedString = (s, n) => {
-  // Write your code here
+  // Write your code here to find the occurances of a in the first nth index elements of a repeating string
 
   let occurances = s.split('a').length - 1;
-  console.log('occurances', occurances);
-  let max = Math.floor(n / s.length);
-  console.log('max', max);
-  let totalAs = occurances * max;
-  console.log('totalAs', totalAs);
-  totalAs += s.slice(0, n % s.length).split('a').length - 1;
-  console.log(s.slice(0, n % s.length));
-  return totalAs;
+
+  let maxFullRepetitionsOfString = Math.floor(n / s.length);
+
+  let total = occurances * maxFullRepetitionsOfString;
+
+  let remainder = s.slice(0, n % s.length);
+
+  total += remainder.split('a').length - 1;
+
+  return total;
 };
 
-console.log(repeatedString('aba', 11));
+console.log(repeatedString('aba', 10));
