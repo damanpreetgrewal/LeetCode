@@ -1,23 +1,19 @@
-const romanToint = s => {
-  const map = {
-    I: 1,
-    V: 5,
-    X: 10,
-    L: 50,
-    C: 100,
-    D: 500,
-    M: 1000,
-  };
-
-  let result = 0;
-  for (let i = 0; i < s.length; i++) {
-    if (s[i + 1] && map[s[i]] < map[s[i + 1]]) {
-      result -= map[s[i]];
-    } else {
-      result += map[s[i]];
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+  const output = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i+1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        output.push(i, j);
+        break;
+      }
     }
   }
-  return result;
+  return output;
 };
 
-console.log(romanToint('IX'));
+console.log(twoSum([3, 2, 4], 6));
